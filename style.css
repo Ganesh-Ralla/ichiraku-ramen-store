@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+}
+
+@font-face {
+    font-family: "japanfont";
+    src: url(fonts/JapanRich-Regular.woff), url(fonts/JapanRich-Regular.woff2);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "khiaraScript";
+    src: url(fonts/KhiaraScript.otf), url(fonts/KhiaraScript1.ttf);
+    font-weight: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: 800;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgb(239, 116, 34);
+}
+
+.navbar.scrolled>.nav-home>a {
+    color: white;
+}
+
+.navbar.scrolled>.hamburger {
+    color: white;
+}
+
+.nav-home>a {
+    text-decoration: none;
+    color: white;
+    font-family: "japanfont";
+    font-size: 2rem;
+    color: rgb(222, 169, 72);
+}
+
+.hamburger {
+    font-size: 2.4rem;
+    color: rgb(222, 169, 72);
+}
+
+.nav-items {
+    position: absolute;
+    top: 100%;
+
+    background-color: white;
+    left: 0;
+    right: 0;
+
+
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-items.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-items>a {
+    text-decoration: none;
+    color: rgb(222, 169, 72);
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+
+.main-bg {
+    min-height: 100vh;
+    width: 100%;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(assets/raman-background-main.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ramen-img {
+    width: 100%;
+}
+
+.ramen-img>img {
+    width: 100%;
+    min-width: 32rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.ramen-img>img {
+    animation: rotate;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+}
+
+.ramen-img>img:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.special {
+    font-family: "khiaraScript";
+    font-size: 6rem;
+    color: rgb(222, 82, 72);
+}
+
+.naruto-ramen {
+    font-family: "japanfont";
+    font-size: 4rem;
+    color: rgb(222, 169, 72);
+}
+
+.quick-picks {
+    padding: 6rem 2rem;
+}
+
+.section-header {
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 2rem 0;
+    color: rgb(222, 82, 72);
+}
+
+.quick-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.quick-card {
+    width: 100%;
+    min-width: 5rem;
+    aspect-ratio: 1/1;
+    background-color: aquamarine;
+    border-radius: 12%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 0 1rem 0;
+
+    background-size: cover;
+}
+
+.quick-card>button {
+    padding: 1rem 4rem;
+    font-weight: 800;
+    border-radius: 2rem;
+    border: none;
+    background-color: rgb(236, 88, 77);
+    color: white;
+}
+
+
+
+.master-chef {
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0), transparent),
+                url(assets/Teuchi.png);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
+
+.master-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.master {
+    font-family: "khiaraScript";
+    font-size: 6rem;
+    text-align: center;
+    color: rgb(222, 82, 72);
+}
+
+.teuchi {
+    font-family: "japanfont";
+    font-size: 3rem;
+    color: rgb(222, 169, 72);
+}
+
+.menu-picks {
+    padding: 6rem 2rem;
+}
+
+
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.menu-card {
+    width: 100%;
+    min-width: 5rem;
+    aspect-ratio: 1/1;
+    background-color: aquamarine;
+    border-radius: 12%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 0 1rem 0;
+
+    background-size: cover;
+}
+
+.menu-card>button {
+    padding: 1rem 4rem;
+    font-weight: 800;
+    border-radius: 2rem;
+    border: none;
+    background-color: rgb(236, 88, 77);
+    color: white;
+}
+
+
+.reviews {
+    padding: 2rem;
+}
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.review-card {
+    width: 100%;
+    min-width: 5rem;
+    aspect-ratio: 4/5;
+    background-color: aquamarine;
+}
+
+.gallery {
+    padding: 2rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.gallery-card {
+    width: 100%;
+    min-width: 5rem;
+    aspect-ratio: 16/9;
+    background-color: aquamarine;
+}
+
+.footer {
+    padding: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.footer-card {
+    width: 100%;
+    min-width: 5rem;
+    /* text-align: center; */
+    /* aspect-ratio: 16/9; */
+    /* background-color: aqua; */
+}
+
+.footer-ramen{
+    font-family: "japanfont";
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(222, 169, 72);
+    padding-bottom: 1rem;
+}
+.footer-quote{
+    text-align: left;
+    font-size: 1.8rem;
+    letter-spacing: 1.6;
+}
+#quick-links{
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-align: left;    
+}
+
+.links{
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem 4rem ;
+}
+.links>a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+#contact{
+    font-weight: 800;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+#email{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#creator{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 2rem 0;
+}
+.cart {
+    padding: 6rem 2rem;
+}
+
+.cart-summery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.cart-container {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #f5f5f5;
+}
+
+.cart-img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 0.8rem;
+    background-color: beige;
+    flex-shrink: 0;
+}
+
+.cart-desc {
+    background-color: beige;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cart-buy {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.cart-buy button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    /* background: black; */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@media (min-width:768px) {
+    .quick-container {
+        padding: 0 4rem;
+    }
+
+    .menu-container {
+        padding: 0 4rem;
+    }
+
+    .review-container {
+        padding: 0 4rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-container {
+        padding: 0 4rem;
+    }
+
+    .footer-container {
+        padding: 0 4rem;
+        grid-template-columns: repeat(3,1fr);
+        align-items: baseline;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-items {
+        opacity: 1;
+        position: static;
+        pointer-events: auto;
+
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        transform: none;
+    }
+
+    .navbar.scrolled>.nav-items>a {
+        color: white;
+    }
+
+    .section-header {
+        font-size: 3rem;
+        font-weight: 800;
+        padding: 2rem 4rem;
+    }
+
+    .naruto-ramen {
+        font-size: 6rem;
+    }
+
+    .special {
+        font-size: 8rem;
+    }
+
+    .master{
+        font-size: 8rem;
+    }
+    .teuchi{
+        font-size: 6rem;
+    }
+
+    .cart-summery {
+        grid-template-columns: 2fr 1fr;
+        /* Items | Summary */
+        align-items: start;
+    }
+}
+
+@media (min-width:1024px) {
+    .main-bg {
+        flex-direction: row-reverse;
+        gap: 4rem;
+        padding: 4rem;
+    }
+
+    .ramen-img {
+        width: 50%;
+    }
+
+    .text-center {
+        width: 50%;
+        text-align: center;
+    }
+
+    .review-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 10rem;
+    }
+
+    .quick-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 10rem;
+    }
+
+    .menu-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 10rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 10rem;
+        gap: 0;
+    }
+
+    .gallery-card {
+        min-width: 8rem;
+    }
+
+    .footer-container {
+        padding: 0 10rem;
+    }
+
+    .cart-container {
+        padding: 0 10rem;
+    }
+}
