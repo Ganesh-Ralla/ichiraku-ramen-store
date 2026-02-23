@@ -137,7 +137,7 @@ body {
     object-fit: cover;
 }
 
-.ramen-img>img {
+/* .ramen-img>img {
     animation: rotate;
     animation-timing-function: linear;
     animation-direction: normal;
@@ -158,7 +158,7 @@ body {
     to {
         transform: rotate(360deg);
     }
-}
+} */
 
 .special {
     font-family: "khiaraScript";
