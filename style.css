@@ -192,25 +192,31 @@ body {
 .quick-card {
     width: 100%;
     min-width: 5rem;
-    aspect-ratio: 1/1;
-    background-color: aquamarine;
-    border-radius: 12%;
+    aspect-ratio: 4/6;
+    background-color: #161817;
+    border-radius: 8%;
 
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 0.4rem;
     padding: 0 0 1rem 0;
 
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .quick-card:hover{
     cursor: pointer;
     transform: translateY(-12px);
     transition: transform 0.2s ease;
 }
-
+.quick-card>p{
+    font-size: 1rem;
+    font-weight: 800    ;
+}
 .quick-card>button {
-    padding: 1rem 4rem;
+    padding: 0.4rem 3rem;
     font-weight: 800;
     border-radius: 2rem;
     border: none;
@@ -493,6 +499,13 @@ section{
         padding: 0 4rem;
     }
 
+    .quick-card>p{
+        font-size: 2rem;
+    }
+    .quick-card>button{
+        padding: 1rem 6rem;
+        font-size: 2rem;
+    }
     .menu-container {
         padding: 0 4rem;
     }

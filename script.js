@@ -29,7 +29,9 @@ if (quickContainer) {
     quickPicks.forEach(item => {
         html += `
         <div class="quick-card" style="background-image: url('${item.image}')">
-            <button>Add</button>
+        <p>${item.name}</p>    
+        <p>${item.price}</p>    
+        <button>Add</button>
         </div>
         `
     })
