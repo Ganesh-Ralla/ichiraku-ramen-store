@@ -300,8 +300,25 @@ body {
 .review-card {
     width: 100%;
     min-width: 5rem;
-    aspect-ratio: 4/5;
-    background-color: aquamarine;
+    border: 4px solid white;
+    border-radius: 12px;
+    text-align: center;
+    padding: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.review-star{
+    font-size: 3rem;
+}
+.reviewer>img{
+    border-radius: 50%;
+}
+.review-content{
+    font-size: 1.8rem;
 }
 
 .gallery {
@@ -317,8 +334,8 @@ body {
 .gallery-card {
     width: 100%;
     min-width: 5rem;
-    aspect-ratio: 16/9;
-    background-color: aquamarine;
+    /* aspect-ratio: 16/9; */
+    /* background-color: aquamarine; */
 }
 
 .footer {
@@ -551,11 +568,19 @@ body {
     }
 
     .gallery-container {
-        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-columns: repeat(3, 1fr); */
         padding: 0 10rem;
+        display: flex;
+        height: auto;
+        overflow: hidden;
         gap: 0;
     }
 
+    .gallery-container>.gallery-card>img{
+        flex: 1;
+        object-fit: cover;
+        
+    }
     .gallery-card {
         min-width: 8rem;
     }
