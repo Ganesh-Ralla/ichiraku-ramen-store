@@ -60,10 +60,14 @@ if(menuContainer){
         const btn = document.createElement("button")
         btn.textContent = "Add"
 
-        const titile = document.createElement("p")
-        titile.textContent= `${ramen.name}`
+        const title = document.createElement("p")
+        title.textContent= ramen.name
+
+        const price = document.createElement("p")
+        price.textContent = `₹${ramen.price}`
         
-        card.appendChild(titile)
+        card.appendChild(title)
+        card.appendChild(price)
         card.appendChild(btn)
 
         menuContainer.appendChild(card)
@@ -91,6 +95,14 @@ if(sides){
         const btn = document.createElement("button")
         btn.textContent = "Add"
 
+        const title = document.createElement("p")
+        title.textContent= side.name
+
+        const price = document.createElement("p")
+        price.textContent = `₹${side.price}`
+
+        sideCard.appendChild(title)
+        sideCard.appendChild(price)
         sideCard.appendChild(btn)
         sidesContainer.appendChild(sideCard)
     })
@@ -115,6 +127,14 @@ if(drinks){
         const btn = document.createElement("button")
         btn.textContent = "Add"
 
+        const title = document.createElement("p")
+        title.textContent= drink.name
+
+        const price = document.createElement("p")
+        price.textContent = `₹${drink.price}`
+
+        drinkCard.appendChild(title)
+        drinkCard.appendChild(price)
         drinkCard.appendChild(btn)
         drinksContainer.appendChild(drinkCard)
     })
