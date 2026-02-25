@@ -14,6 +14,7 @@ hamburger.addEventListener("click", () => {
     navItems.classList.toggle("active")
 })
 
+// ============================ quick picks =============
 let quickPicks = [
     { id: 1, name: 'Shio ramen', price: 229, image: 'assets/Shio_ramen.png' },
     { id: 2, name: 'Shoyu ramen', price: 229, image: 'assets/Shoyu_ramen.png' },
@@ -39,6 +40,7 @@ if (quickContainer) {
     quickContainer.innerHTML = html
 }
 
+// ======================= ramens ===================
 
 let ramens = [
     { id: 1, name: 'Shio ramen', price: 229, image: 'assets/Shio_ramen.png' },
@@ -52,22 +54,26 @@ let ramens = [
 
 const menuContainer = document.querySelector(".menu-container")
 
-if(menuContainer){
-    ramens.forEach(ramen =>{
+if (menuContainer) {
+    ramens.forEach(ramen => {
 
-        const card= document.createElement("div")
+        const card = document.createElement("div")
         card.classList.add('menu-card')
         card.style.backgroundImage = `url('${ramen.image}')`
 
         const btn = document.createElement("button")
         btn.textContent = "Add"
 
+        btn.addEventListener("click", () => {
+            addToCart(ramen)
+        })
+
         const title = document.createElement("p")
-        title.textContent= ramen.name
+        title.textContent = ramen.name
 
         const price = document.createElement("p")
         price.textContent = `₹${ramen.price}`
-        
+
         card.appendChild(title)
         card.appendChild(price)
         card.appendChild(btn)
@@ -75,6 +81,8 @@ if(menuContainer){
         menuContainer.appendChild(card)
     })
 }
+
+// ================ sides ======================
 
 let sides = [
     { id: 1, name: 'Gyoza', price: 129, image: 'assets/Gyoza.png' },
@@ -88,8 +96,8 @@ let sides = [
 ]
 
 const sidesContainer = document.querySelector(".sides-container")
-if(sides){
-    sides.forEach(side =>{
+if (sidesContainer) {
+    sides.forEach(side => {
         const sideCard = document.createElement("div")
         sideCard.classList.add('menu-card')
         sideCard.style.backgroundImage = `url('${side.image}')`
@@ -97,8 +105,12 @@ if(sides){
         const btn = document.createElement("button")
         btn.textContent = "Add"
 
+        btn.addEventListener("click", () => {
+            addToCart(side)
+        })
+
         const title = document.createElement("p")
-        title.textContent= side.name
+        title.textContent = side.name
 
         const price = document.createElement("p")
         price.textContent = `₹${side.price}`
@@ -110,6 +122,8 @@ if(sides){
     })
 }
 
+// ============== drinks ================
+
 let drinks = [
     { id: 1, name: 'Matcha latte', price: 99, image: 'assets/Matcha_latte.png' },
     { id: 2, name: 'Ramune soda', price: 99, image: 'assets/Ramune_soda.png' },
@@ -120,17 +134,21 @@ let drinks = [
 
 const drinksContainer = document.querySelector(".drinks-container")
 
-if(drinks){
-    drinks.forEach(drink =>{
+if (drinksContainer) {
+    drinks.forEach(drink => {
         const drinkCard = document.createElement("div")
         drinkCard.classList.add('menu-card')
-        drinkCard.style.backgroundImage=`url('${drink.image}')`
+        drinkCard.style.backgroundImage = `url('${drink.image}')`
 
+        // add to cart option is assigned here
         const btn = document.createElement("button")
         btn.textContent = "Add"
+        btn.addEventListener("click", () => {
+            addToCart(drink)
+        })
 
         const title = document.createElement("p")
-        title.textContent= drink.name
+        title.textContent = drink.name
 
         const price = document.createElement("p")
         price.textContent = `₹${drink.price}`
@@ -141,3 +159,141 @@ if(drinks){
         drinksContainer.appendChild(drinkCard)
     })
 }
+
+// ============== cart logic ==============
+
+let addToCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+    const existingProduct = cart.find(item => item.name === product.name)
+
+    if (existingProduct) {
+        existingProduct.quantity += 1
+    } else {
+        cart.push({ ...product, quantity: 1 })
+    }
+    console.log(cart);
+
+    localStorage.setItem("cart", JSON.stringify(cart))
+
+}
+
+
+// =========== cart ============
+// cart is a seperate html page that takes local storage data
+
+const cartContainer = document.querySelector('.cart-container')
+
+const cartBuy = document.querySelector('.cart-buy')
+
+
+let renderCart = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+
+    if (!cartContainer) return
+
+    cartContainer.innerHTML = ""
+
+    let total = 0
+    cart.forEach(cartItem => {
+
+        // create card
+        const cartCard = document.createElement("div")
+        cartCard.classList.add('cart-card')
+
+        // image details
+        const cartImg = document.createElement("div")
+        const cartImage = document.createElement("img")
+        cartImage.src = cartItem.image
+        cartImage.style.objectFit = 'cover'
+        cartImage.style.height = '100%'
+
+        cartImg.classList.add('cart-img')
+
+        cartImg.appendChild(cartImage)
+
+
+        // description - name and price
+        const cartDesc = document.createElement("div")
+        cartDesc.classList.add('cart-desc')
+
+        const name = document.createElement("p")
+        name.textContent = `${cartItem.name} x ${cartItem.quantity}`
+
+        const itemTotal = cartItem.price * cartItem.quantity
+
+        const price = document.createElement("p")
+        price.textContent = `${itemTotal}`
+
+
+        total += itemTotal
+
+
+        // cartDesc.textContent = `${cartItem.name} x ${cartItem.quantity} - ${cartItem.price} `
+
+        cartDesc.appendChild(name)
+        cartDesc.appendChild(price)
+
+        cartCard.appendChild(cartImg)
+        cartCard.appendChild(cartDesc)
+
+        cartContainer.appendChild(cartCard)
+    })
+
+    if (cartBuy) {
+        cartBuy.innerHTML = ""
+
+        if (cart.length === 0) {
+            cartBuy.innerHTML = "<p>Cart is empty</p>"
+            return
+        }
+
+        const wishDiv = document.createElement('div')
+        
+        const wish = document.createElement('p')
+        wish.textContent= "Thank you"
+        wish.classList.add('thank-you')
+        wishDiv.appendChild(wish)
+
+        const billDiv = document.createElement('div')
+        billDiv.classList.add('bill-area')
+
+        const subtotal = document.createElement("p")
+        subtotal.textContent = `Subtotal : ₹${total}`
+
+        const gstAmount = total * 0.05
+        const gst = document.createElement("p")
+        gst.textContent = `GST (5%) : ₹${gstAmount}`
+
+        const finalAmount = document.createElement("h3")
+        finalAmount.textContent = `Total : ₹${total + gstAmount}`
+
+        const checkoutBtn = document.createElement("button")
+        checkoutBtn.textContent = "Place Order"
+
+        checkoutBtn.addEventListener("click", () => {
+            alert("Order Placed")
+
+            localStorage.removeItem("cart")
+
+            window.location.href = "index.html"
+        })
+
+        cartBuy.appendChild(wishDiv)
+
+        billDiv.appendChild(subtotal)
+        billDiv.appendChild(gst)
+        billDiv.appendChild(finalAmount)
+        billDiv.appendChild(checkoutBtn)
+
+        cartBuy.appendChild(billDiv)
+    }
+
+}
+
+if (cartContainer) {
+    renderCart()
+}
+
+

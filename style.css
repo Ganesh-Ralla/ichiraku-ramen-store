@@ -206,15 +206,18 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.quick-card:hover{
+
+.quick-card:hover {
     cursor: pointer;
     transform: translateY(-12px);
     transition: transform 0.2s ease;
 }
-.quick-card>p{
+
+.quick-card>p {
     font-size: 1rem;
-    font-weight: 800    ;
+    font-weight: 800;
 }
+
 .quick-card>button {
     padding: 0.4rem 3rem;
     font-weight: 800;
@@ -231,8 +234,8 @@ body {
     width: 100%;
 
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0), transparent),
-                url(assets/Teuchi.png);
+    background: linear-gradient(to top, rgba(0, 0, 0), transparent),
+        url(assets/Teuchi.png);
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -290,10 +293,12 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.menu-card>p{
+
+.menu-card>p {
     font-size: 1rem;
-    font-weight: 800    ;
+    font-weight: 800;
 }
+
 .menu-card>button {
     padding: 0.4rem 3rem;
     font-weight: 800;
@@ -329,16 +334,19 @@ body {
 
 }
 
-section{
+section {
     padding: 8rem 0;
 }
-.review-star{
+
+.review-star {
     font-size: 3rem;
 }
-.reviewer>img{
+
+.reviewer>img {
     border-radius: 50%;
 }
-.review-content{
+
+.review-content {
     font-size: 1.8rem;
 }
 
@@ -354,7 +362,8 @@ section{
 }
 
 .gallery-card {
-    aspect-ratio: 1 / 1;   /* Perfect square */
+    aspect-ratio: 1 / 1;
+    /* Perfect square */
     overflow: hidden;
     border-radius: 1.2rem;
 }
@@ -386,54 +395,60 @@ section{
     min-width: 5rem;
 }
 
-.footer-ramen{
+.footer-ramen {
     font-family: "japanfont";
     text-align: center;
     font-size: 2rem;
     color: rgb(222, 169, 72);
     padding-bottom: 1rem;
 }
-.footer-quote{
+
+.footer-quote {
     text-align: left;
     font-size: 1.8rem;
     letter-spacing: 1.6;
 }
-#quick-links{
+
+#quick-links {
     font-weight: 800;
     font-size: 1.8rem;
-    text-align: left;    
+    text-align: left;
 }
 
-.links{
+.links {
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1rem 4rem ;
+    gap: 1rem 4rem;
 }
-.links>a{
+
+.links>a {
     text-decoration: none;
     color: white;
     font-weight: 600;
     font-size: 1.4rem;
 }
-#contact{
+
+#contact {
     font-weight: 800;
     font-size: 1.8rem;
     padding: 1rem 0;
 }
-#email{
+
+#email {
     font-size: 1.5rem;
     font-weight: 400;
 }
 
-#creator{
+#creator {
     text-align: center;
     font-weight: 600;
     font-size: 1.8rem;
     padding: 2rem 0;
 }
+
 .cart {
     padding: 6rem 2rem;
 }
@@ -445,31 +460,39 @@ section{
 }
 
 .cart-container {
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
 .cart-card {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+
     display: flex;
     gap: 1rem;
     align-items: center;
     padding: 1rem;
     border-radius: 1rem;
-    background: #f5f5f5;
+    background: #111;
 }
 
 .cart-img {
-    height: 8rem;
-    width: 8rem;
+    /* height: 10rem;
+    width: 10rem; */
+
+    width: 10rem;
+    aspect-ratio: 1/1;
     border-radius: 0.8rem;
-    background-color: beige;
+    /* background-color: beige; */
     flex-shrink: 0;
 }
 
 .cart-desc {
-    background-color: beige;
+    /* background-color: beige; */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -477,21 +500,48 @@ section{
 }
 
 .cart-buy {
-    background-color: aqua;
+    background-color: #111;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
+    gap: 6rem;
+    /* align-items: flex-start; */
+    padding: 1rem;
+    border-radius: 4%;
 }
+
 
 .cart-buy button {
     padding: 0.8rem;
     border: none;
     border-radius: 8px;
-    /* background: black; */
+    background: rgb(222, 169, 72);
     color: white;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     cursor: pointer;
+    font-weight: 600;
+}
+
+
+
+.thank-you {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.bill-area {
+    font-size: 1.4rem;
+    line-height: 2;
+
+}
+
+.bill-area>h3,
+button {
+    font-size: 2rem;
+}
+
+.bill-area>button {
+    margin-top: 4rem;
 }
 
 @media (min-width:768px) {
@@ -499,37 +549,41 @@ section{
         padding: 0 4rem;
     }
 
-    .quick-card>p{
+    .quick-card>p {
         font-size: 2rem;
     }
-    .quick-card>button{
+
+    .quick-card>button {
         padding: 1rem 6rem;
         font-size: 2rem;
     }
+
     .menu-container {
         padding: 0 4rem;
     }
 
-    .menu-card>p{
+    .menu-card>p {
         font-size: 2rem;
     }
-    .menu-card>button{
+
+    .menu-card>button {
         padding: 1rem 6rem;
         font-size: 2rem;
     }
+
     .review-container {
         padding: 0 4rem;
         grid-template-columns: repeat(2, 1fr);
     }
 
     .gallery-container {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         padding: 0 4rem;
     }
 
     .footer-container {
         padding: 0 4rem;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         align-items: baseline;
     }
 
@@ -566,17 +620,24 @@ section{
         font-size: 8rem;
     }
 
-    .master{
+    .master {
         font-size: 8rem;
     }
-    .teuchi{
+
+    .teuchi {
         font-size: 6rem;
     }
 
     .cart-summery {
         grid-template-columns: 2fr 1fr;
         /* Items | Summary */
-        align-items: start;
+        align-items: stretch;
+    }
+
+    .thank-you {
+        font-size: 3.8rem;
+        font-weight: 800;
+        text-align: center;
     }
 }
 
@@ -594,6 +655,10 @@ section{
     .text-center {
         width: 50%;
         text-align: center;
+    }
+
+    .menu-card {
+        gap: 2rem;
     }
 
     .review-container {
@@ -614,14 +679,15 @@ section{
     .gallery-container {
         grid-template-columns: repeat(4, 1fr);
         padding: 0 10rem;
-        
+
     }
 
-    .gallery-container>.gallery-card>img{
+    .gallery-container>.gallery-card>img {
         flex: 1;
         object-fit: cover;
-        
+
     }
+
     .gallery-card {
         min-width: 8rem;
     }
@@ -632,5 +698,26 @@ section{
 
     .cart-container {
         padding: 0 10rem;
+    }
+
+    .thank-you {
+        font-size: 6rem;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .bill-area {
+        font-size: 2.4rem;
+        line-height: 2;
+
+    }
+
+    .bill-area>h3,
+    button {
+        font-size: 2.8rem;
+    }
+
+    .bill-area>button {
+        margin-top: 4rem;
     }
 }
