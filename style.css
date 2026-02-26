@@ -29,6 +29,9 @@ body {
     font-weight: normal;
 }
 
+button:hover{
+    cursor: pointer;
+}
 .text-center {
     text-align: center;
 }
@@ -449,13 +452,24 @@ section {
     padding: 2rem 0;
 }
 
+.cart-bg{
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+                url(assets/cart_bg.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 70vh;
+}
 .cart {
     padding: 6rem 2rem;
+   
 }
 
 .cart-summery {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1,1fr);
+    align-items: stretch;
     gap: 2rem;
 }
 
@@ -503,10 +517,13 @@ section {
     background-color: #111;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6rem;
     /* align-items: flex-start; */
     padding: 1rem;
     border-radius: 4%;
+    min-height: 30rem;
 }
 
 
@@ -639,6 +656,15 @@ button {
         font-weight: 800;
         text-align: center;
     }
+}
+
+.empty-cart{
+    grid-template-columns: 1fr;
+    font-size: 4rem;
+    font-weight: 800;
+}
+.empty-cart>p{
+    font-size: 4rem;
 }
 
 @media (min-width:1024px) {

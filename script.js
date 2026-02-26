@@ -244,6 +244,8 @@ let renderCart = () => {
     if (cartBuy) {
         cartBuy.innerHTML = ""
 
+        document.querySelector('.cart-summery').classList.add("empty-cart")
+
         if (cart.length === 0) {
             cartBuy.innerHTML = "<p>Cart is empty</p>"
             return
