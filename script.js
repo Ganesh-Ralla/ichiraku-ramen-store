@@ -38,6 +38,14 @@ if (quickContainer) {
     })
 
     quickContainer.innerHTML = html
+
+    const quickButtons = quickContainer.querySelectorAll("button")
+
+    quickButtons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            addToCart(quickPicks[index])
+        })
+    })
 }
 
 // ======================= ramens ===================
@@ -252,9 +260,9 @@ let renderCart = () => {
         }
 
         const wishDiv = document.createElement('div')
-        
+
         const wish = document.createElement('p')
-        wish.textContent= "Thank you"
+        wish.textContent = "Thank you"
         wish.classList.add('thank-you')
         wishDiv.appendChild(wish)
 
@@ -266,10 +274,10 @@ let renderCart = () => {
 
         const gstAmount = total * 0.05
         const gst = document.createElement("p")
-        gst.textContent = `GST (5%) : ₹${gstAmount}`
+        gst.textContent = `GST (5%) : ₹${gstAmount.toFixed(2)}`
 
         const finalAmount = document.createElement("h3")
-        finalAmount.textContent = `Total : ₹${total + gstAmount}`
+        finalAmount.textContent = `Total : ₹${(total + gstAmount).toFixed(2)}`
 
         const checkoutBtn = document.createElement("button")
         checkoutBtn.textContent = "Place Order"
