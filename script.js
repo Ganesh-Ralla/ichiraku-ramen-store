@@ -16,10 +16,10 @@ hamburger.addEventListener("click", () => {
 
 // ============================ quick picks =============
 let quickPicks = [
-    { id: 1, name: 'Shio ramen', price: 229, image: 'assets/Shio_ramen.png' },
-    { id: 2, name: 'Shoyu ramen', price: 229, image: 'assets/Shoyu_ramen.png' },
-    { id: 3, name: 'Karaage', price: 129, image: 'assets/Karaage.png' },
-    { id: 4, name: 'Sakura milk', price: 99, image: 'assets/Sakura_milk.png' },
+    { id: 1, name: 'Shio ramen', price: 249, image: 'assets/Shio_ramen.png' },
+    { id: 2, name: 'Shoyu ramen', price: 249, image: 'assets/Shoyu_ramen.png' },
+    { id: 3, name: 'Karaage', price: 149, image: 'assets/Karaage.png' },
+    { id: 4, name: 'Sakura milk', price: 119, image: 'assets/Sakura_milk.png' },
 ]
 
 const quickContainer = document.querySelector(".quick-container")
@@ -49,15 +49,14 @@ if (quickContainer) {
 }
 
 // ======================= ramens ===================
-
 let ramens = [
-    { id: 1, name: 'Shio ramen', price: 229, image: 'assets/Shio_ramen.png' },
-    { id: 2, name: 'Shoyu ramen', price: 229, image: 'assets/Shoyu_ramen.png' },
-    { id: 3, name: 'Tantanmen ramen', price: 229, image: 'assets/Tantanmen_ramen.png' },
-    { id: 4, name: 'Tonkotsu ramen', price: 229, image: 'assets/Tonkotsu_ramen.png' },
-    { id: 5, name: 'Tsukemen ramen', price: 229, image: 'assets/Tsukemen_ramen.png' },
-    { id: 6, name: 'Vegan ramen', price: 229, image: 'assets/Vegan_ramen.png' },
-    { id: 7, name: 'Miso ramen', price: 229, image: 'assets/Miso_ramen.png' },
+    { id: 1, name: 'Shio ramen', price: 249, image: 'assets/Shio_ramen.png' },
+    { id: 2, name: 'Shoyu ramen', price: 249, image: 'assets/Shoyu_ramen.png' },
+    { id: 3, name: 'Tantanmen ramen', price: 269, image: 'assets/Tantanmen_ramen.png' },
+    { id: 4, name: 'Tonkotsu ramen', price: 279, image: 'assets/Tonkotsu_ramen.png' },
+    { id: 5, name: 'Tsukemen ramen', price: 289, image: 'assets/Tsukemen_ramen.png' },
+    { id: 6, name: 'Vegan ramen', price: 259, image: 'assets/Vegan_ramen.png' },
+    { id: 7, name: 'Miso ramen', price: 269, image: 'assets/Miso_ramen.png' },
 ]
 
 const menuContainer = document.querySelector(".menu-container")
@@ -93,14 +92,14 @@ if (menuContainer) {
 // ================ sides ======================
 
 let sides = [
-    { id: 1, name: 'Gyoza', price: 129, image: 'assets/Gyoza.png' },
-    { id: 2, name: 'Karaage', price: 129, image: 'assets/Karaage.png' },
-    { id: 3, name: 'Takoyaki', price: 129, image: 'assets/Takoyaki.png' },
+    { id: 1, name: 'Gyoza', price: 149, image: 'assets/Gyoza.png' },
+    { id: 2, name: 'Karaage', price: 159, image: 'assets/Karaage.png' },
+    { id: 3, name: 'Takoyaki', price: 149, image: 'assets/Takoyaki.png' },
     { id: 4, name: 'Edamame', price: 129, image: 'assets/Edamame.png' },
-    { id: 5, name: 'Tempura', price: 129, image: 'assets/Tempura.png' },
-    { id: 6, name: 'Onigiri', price: 129, image: 'assets/Onigiri.png' },
-    { id: 7, name: 'Japanese potato salad', price: 129, image: 'assets/Japanese_potato_salad.png' },
-    { id: 8, name: 'Chashu rice bowl', price: 129, image: 'assets/Chashu_rice_bowl.png' },
+    { id: 5, name: 'Tempura', price: 169, image: 'assets/Tempura.png' },
+    { id: 6, name: 'Onigiri', price: 139, image: 'assets/Onigiri.png' },
+    { id: 7, name: 'Japanese potato salad', price: 139, image: 'assets/Japanese_potato_salad.png' },
+    { id: 8, name: 'Chashu rice bowl', price: 179, image: 'assets/Chashu_rice_bowl.png' },
 ]
 
 const sidesContainer = document.querySelector(".sides-container")
@@ -133,11 +132,11 @@ if (sidesContainer) {
 // ============== drinks ================
 
 let drinks = [
-    { id: 1, name: 'Matcha latte', price: 99, image: 'assets/Matcha_latte.png' },
-    { id: 2, name: 'Ramune soda', price: 99, image: 'assets/Ramune_soda.png' },
-    { id: 3, name: 'Japanese iced coffee', price: 99, image: 'assets/Japanese_iced_coffee.png' },
-    { id: 4, name: 'Sakura milk', price: 99, image: 'assets/Sakura_milk.png' },
-    { id: 5, name: 'Hojicha latte', price: 99, image: 'assets/Hojicha_latte.png' },
+    { id: 1, name: 'Matcha latte', price: 129, image: 'assets/Matcha_latte.png' },
+    { id: 2, name: 'Ramune soda', price: 119, image: 'assets/Ramune_soda.png' },
+    { id: 3, name: 'Japanese iced coffee', price: 129, image: 'assets/Japanese_iced_coffee.png' },
+    { id: 4, name: 'Sakura milk', price: 119, image: 'assets/Sakura_milk.png' },
+    { id: 5, name: 'Hojicha latte', price: 129, image: 'assets/Hojicha_latte.png' },
 ]
 
 const drinksContainer = document.querySelector(".drinks-container")
